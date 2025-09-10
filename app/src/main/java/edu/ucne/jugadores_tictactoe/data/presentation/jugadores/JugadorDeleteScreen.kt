@@ -64,7 +64,7 @@ fun DeleteJugadorBodyScreen(
     Scaffold(
         topBar = {
             Text(
-                text = "Estas seguro que deseas eliminar esta tarea?",
+                text = "Estas seguro que deseas eliminar este jugador?",
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp),
