@@ -1,6 +1,5 @@
 package edu.ucne.jugadores_tictactoe.data.presentation.jugadores
 
-
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -30,12 +29,10 @@ import androidx.compose.ui.text.TextStyle
 @Composable
 fun JugadorDeleteScreen(
     viewModel: JugadoresViewModel = hiltViewModel(),
-    jugadorId:Int,
+    jugadorId: Int,
     goBack: () -> Unit
-
-){
-
-    LaunchedEffect(jugadorId){
+) {
+    LaunchedEffect(jugadorId) {
         viewModel.selectJugador(jugadorId)
     }
 
@@ -47,24 +44,20 @@ fun JugadorDeleteScreen(
             viewModel.deleteJugador()
             goBack()
         },
-        goBack
+        goBack = goBack
     )
-
 }
-
 
 @Composable
 fun DeleteJugadorBodyScreen(
     uiState: JugadoresUiState,
-    onDeleteSistema:()-> Unit,
-    goBack:()-> Unit
-
-){
-
+    onDeleteSistema: () -> Unit,
+    goBack: () -> Unit
+) {
     Scaffold(
         topBar = {
             Text(
-                text = "Estas seguro que deseas eliminar este jugador?",
+                text = "¿Estás seguro que deseas eliminar este jugador?",
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp),
@@ -74,37 +67,30 @@ fun DeleteJugadorBodyScreen(
                     color = Color.Red,
                     textAlign = TextAlign.Center
                 ),
-
-                )
+            )
         }
-    )
-    { innerPading ->
+    ) { innerPadding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(innerPading)
+                .padding(innerPadding)
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
-
         ) {
-
             Spacer(modifier = Modifier.height(24.dp))
+
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 8.dp),
                 shape = RoundedCornerShape(8.dp),
                 elevation = CardDefaults.elevatedCardElevation(defaultElevation = 4.dp)
-
             ) {
                 Column(
-                    modifier = Modifier
-                        .padding(16.dp)
+                    modifier = Modifier.padding(16.dp)
                 ) {
-
-
                     Text(
-                        text = "Jugador ID: ${(uiState.jugadorId)}",
+                        text = "Jugador ID: ${uiState.jugadorId}",
                         style = TextStyle(
                             fontWeight = FontWeight.Bold,
                             fontSize = 16.sp,
@@ -112,7 +98,6 @@ fun DeleteJugadorBodyScreen(
                         ),
                         modifier = Modifier.padding(8.dp)
                     )
-
 
                     Text(
                         text = "Nombre: ${uiState.nombre}",
@@ -125,7 +110,7 @@ fun DeleteJugadorBodyScreen(
                     )
 
                     Text(
-                        text = "Partida: ${(uiState.partidas)}",
+                        text = "Partidas: ${uiState.partidas}",
                         style = TextStyle(
                             fontWeight = FontWeight.Bold,
                             fontSize = 16.sp,
@@ -133,37 +118,28 @@ fun DeleteJugadorBodyScreen(
                         ),
                         modifier = Modifier.padding(8.dp)
                     )
-
                 }
-
             }
 
             Spacer(modifier = Modifier.height(16.dp))
+
             Button(
-                onClick = {
-                    onDeleteSistema()
-                },
+                onClick = { onDeleteSistema() },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(vertical = 4.dp)
-
-            ){
+            ) {
                 Text(text = "Eliminar")
             }
 
             Button(
-                onClick = {
-                    goBack()
-                },
+                onClick = { goBack() },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(vertical = 8.dp)
-            ){
-                Text(text= "Cancelar")
+            ) {
+                Text(text = "Cancelar")
             }
-
         }
-
     }
-
 }

@@ -1,6 +1,7 @@
 package edu.ucne.jugadores_tictactoe.data.presentation.jugadores
 
-import edu.ucne.jugadores_tictactoe.data.jugadores.local.entities.JugadoresEntity
+import edu.ucne.jugadores_tictactoe.data.Partidas.local.entities.JugadoresEntity
+
 
 data class JugadoresUiState (
 

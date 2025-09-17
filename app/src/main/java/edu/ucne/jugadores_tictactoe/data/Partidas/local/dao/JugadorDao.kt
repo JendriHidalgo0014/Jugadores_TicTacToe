@@ -1,12 +1,11 @@
-package edu.ucne.jugadores_tictactoe.data.jugadores.local.dao
+package edu.ucne.jugadores_tictactoe.data.Partidas.local.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Upsert
-import edu.ucne.jugadores_tictactoe.data.jugadores.local.entities.JugadoresEntity
+import edu.ucne.jugadores_tictactoe.data.Partidas.local.entities.JugadoresEntity
 import kotlinx.coroutines.flow.Flow
-
 
 @Dao
 interface JugadorDao {
@@ -18,7 +17,7 @@ interface JugadorDao {
     suspend fun find(id: Int): JugadoresEntity
 
     @Delete
-    suspend fun delete(juador: JugadoresEntity)
+    suspend fun delete(jugador: JugadoresEntity)
 
     @Query("SELECT * FROM Jugadores")
     fun getAll(): Flow<List<JugadoresEntity>>

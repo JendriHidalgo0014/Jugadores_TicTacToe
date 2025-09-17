@@ -1,4 +1,4 @@
-package edu.ucne.jugadores_tictactoe.data.jugadores.local.entities
+package edu.ucne.jugadores_tictactoe.data.Partidas.local.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

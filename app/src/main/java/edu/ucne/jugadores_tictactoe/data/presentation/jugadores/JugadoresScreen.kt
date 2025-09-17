@@ -1,4 +1,4 @@
-package edu.ucne.jugadores_tictactoe.data.presentation
+package edu.ucne.jugadores_tictactoe.data.presentation.jugadores
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -32,12 +32,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import edu.ucne.jugadores_tictactoe.data.jugadores.local.database.JugadorDb
-import edu.ucne.jugadores_tictactoe.data.jugadores.local.entities.JugadoresEntity
 import edu.ucne.jugadores_tictactoe.data.presentation.jugadores.JugadoresUiState
 import edu.ucne.jugadores_tictactoe.data.presentation.jugadores.JugadoresViewModel
 import java.time.format.TextStyle
@@ -131,7 +130,7 @@ fun JugadoresBodyScreen(
 
                 OutlinedButton(
                     onClick = { save()
-                               goBack() },
+                        goBack() },
 
                     modifier = Modifier.weight(1f),
                     shape = RoundedCornerShape(16.dp)
@@ -188,7 +187,7 @@ fun JugadoresBodyScreen(
 
                 )
 
-               }
             }
         }
+    }
 }

@@ -1,5 +1,4 @@
-package edu.ucne.jugadores_tictactoe.data.presentation
-
+package edu.ucne.jugadores_tictactoe.data.presentation.jugadores
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -41,9 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import edu.ucne.jugadores_tictactoe.data.jugadores.local.entities.JugadoresEntity
-import edu.ucne.jugadores_tictactoe.data.presentation.jugadores.JugadoresUiState
-import edu.ucne.jugadores_tictactoe.data.presentation.jugadores.JugadoresViewModel
+import edu.ucne.jugadores_tictactoe.data.Partidas.local.entities.JugadoresEntity
 import kotlinx.coroutines.CoroutineScope
 
 
@@ -224,6 +221,6 @@ fun JugadorRow(
                 )
             }
 
-            }
         }
+    }
 }

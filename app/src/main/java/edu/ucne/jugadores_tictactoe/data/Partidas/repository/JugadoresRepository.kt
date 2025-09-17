@@ -1,10 +1,9 @@
-package edu.ucne.jugadores_tictactoe.data.jugadores.repository
+package edu.ucne.jugadores_tictactoe.data.Partidas.repository
 
-import edu.ucne.jugadores_tictactoe.data.jugadores.local.dao.JugadorDao
-import edu.ucne.jugadores_tictactoe.data.jugadores.local.entities.JugadoresEntity
+import edu.ucne.jugadores_tictactoe.data.Partidas.local.dao.JugadorDao
+import edu.ucne.jugadores_tictactoe.data.Partidas.local.entities.JugadoresEntity
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
-
 
 class JugadoresRepository @Inject constructor(
     val jugadoresDao: JugadorDao

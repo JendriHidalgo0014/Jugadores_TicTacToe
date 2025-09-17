@@ -10,11 +10,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import edu.ucne.jugadores_tictactoe.ui.theme.Jugadores_TicTacToeTheme
 import edu.ucne.jugadores_tictactoe.data.presentation.JugadorListScreen
 import edu.ucne.jugadores_tictactoe.data.presentation.JugadoresScreen
-import edu.ucne.jugadores_tictactoe.data.presentation.jugadores.JugadorDeleteScreen
-import edu.ucne.jugadores_tictactoe.data.presentation.jugadores.JugadorEditScreen
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

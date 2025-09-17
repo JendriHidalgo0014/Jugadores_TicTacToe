@@ -3,8 +3,8 @@ package edu.ucne.jugadores_tictactoe.data.presentation.jugadores
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import edu.ucne.jugadores_tictactoe.data.jugadores.local.entities.JugadoresEntity
-import edu.ucne.jugadores_tictactoe.data.jugadores.repository.JugadoresRepository
+import edu.ucne.jugadores_tictactoe.data.Partidas.local.entities.JugadoresEntity
+import edu.ucne.jugadores_tictactoe.data.Partidas.repository.JugadoresRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -143,7 +143,7 @@ class JugadoresViewModel @Inject constructor(
     fun JugadoresUiState.toEntity() = JugadoresEntity(
         jugadorId = jugadorId,
         nombre = nombre,
-        partidas = partidas?:0
+        partidas = partidas ?: 0
 
     )
 
