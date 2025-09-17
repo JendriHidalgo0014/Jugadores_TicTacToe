@@ -13,5 +13,4 @@ data class PartidasEntity(
     val jugador2Id: Int? = null,
     val ganadorId: Int? = null,
     val esFinalizada: String = ""
-
-    )
+)
