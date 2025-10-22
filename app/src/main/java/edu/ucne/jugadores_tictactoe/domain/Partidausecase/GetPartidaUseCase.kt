@@ -1,0 +1,13 @@
+package edu.ucne.jugadores_tictactoe.domain.Partidausecase
+
+import edu.ucne.jugadores_tictactoe.domain.model.Partida
+import edu.ucne.jugadores_tictactoe.domain.repository.PartidaRepository
+import javax.inject.Inject
+
+class GetPartidaUseCase  @Inject constructor(
+    private val repository: PartidaRepository
+) {
+    suspend operator fun invoke(id: Int): Partida? {
+        return repository.getPartidaById(id)
+    }
+}

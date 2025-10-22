@@ -59,16 +59,23 @@ dependencies {
 
     implementation("com.google.accompanist:accompanist-permissions:0.30.1")
 
-
-
+    // Gson para TypeConverter
+    implementation("com.google.code.gson:gson:2.10.1")
 
     implementation("androidx.compose.foundation:foundation:1.5.0")
 
     //optional
     implementation("androidx.room:room-ktx:2.6.1")
-    implementation("androidx.compose.material3:material3:1.1.0-alpha02")
-    implementation ("androidx.compose.material:material:1.4.0")
-    implementation("androidx.compose.material:material:1.3.1") // Usa la última versión
+
+    // BOM de Compose - maneja automáticamente las versiones compatibles
+    implementation(platform("androidx.compose:compose-bom:2023.10.01"))
+
+    implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.material:material")
+
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling-preview")
 
 
 
