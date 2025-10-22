@@ -188,7 +188,7 @@ fun GameBoard(
     val gameStatus = when {
         uiState.winner != null -> {
             val ganador = if (uiState.winner == Player.X) uiState.jugadorX else uiState.jugadorO
-            "🏆 ¡El ganador es!: ${ganador?.nombre}!"
+            "¡El ganador es!: ${ganador?.nombre}!"
         }
         uiState.isDraw -> "¡Es un empate!"
         else -> {

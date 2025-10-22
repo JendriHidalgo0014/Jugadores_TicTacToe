@@ -87,7 +87,6 @@ class GameViewModel @Inject constructor(
         )
     }
 
-    // 🆕 Cargar estado desde la API
     fun loadGameFromApi() {
         viewModelScope.launch {
             _state.update { it.copy(isLoadingFromApi = true, apiMessage = null) }
@@ -138,7 +137,7 @@ class GameViewModel @Inject constructor(
                     _state.update {
                         it.copy(
                             isLoadingFromApi = false,
-                            apiMessage = "ℹ️ No hay movimientos en el servidor"
+                            apiMessage = "ℹNo hay movimientos en el servidor"
                         )
                     }
                 }
@@ -146,7 +145,7 @@ class GameViewModel @Inject constructor(
                 _state.update {
                     it.copy(
                         isLoadingFromApi = false,
-                        apiMessage = "❌ Error: ${e.message}"
+                        apiMessage = "Error: ${e.message}"
                     )
                 }
             }
@@ -182,14 +181,14 @@ class GameViewModel @Inject constructor(
                 _state.update {
                     it.copy(
                         isSyncingToApi = false,
-                        apiMessage = "✅ Enviados $movimientosEnviados movimientos"
+                        apiMessage = "Enviados $movimientosEnviados movimientos"
                     )
                 }
             } catch (e: Exception) {
                 _state.update {
                     it.copy(
                         isSyncingToApi = false,
-                        apiMessage = "❌ Error: ${e.message}"
+                        apiMessage = " Error: ${e.message}"
                     )
                 }
             }
