@@ -5,9 +5,9 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import edu.ucne.jugadores_tictactoe.domain.Apiusecase.Movimientousecase.GetMovimientoUseCase
 import edu.ucne.jugadores_tictactoe.domain.Apiusecase.Movimientousecase.PostMovimientoUseCase
+import edu.ucne.jugadores_tictactoe.domain.Jugadorusecase.GetJugadoresUseCase
 import edu.ucne.jugadores_tictactoe.domain.model.Jugadores
 import edu.ucne.jugadores_tictactoe.domain.model.Movimiento
-import edu.ucne.jugadores_tictactoe.domain.usecase.GetAllJugadoresUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -17,7 +17,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class GameViewModel @Inject constructor(
-    private val getAllJugadoresUseCase: GetAllJugadoresUseCase,
+    private val getJugadoresUseCase: GetJugadoresUseCase,
     private val getMovimientoUseCase: GetMovimientoUseCase,
     private val postMovimientoUseCase: PostMovimientoUseCase
 ) : ViewModel() {
@@ -27,7 +27,7 @@ class GameViewModel @Inject constructor(
 
     fun showPlayerSelection() {
         viewModelScope.launch {
-            getAllJugadoresUseCase().collect { jugadores ->
+            getJugadoresUseCase().collect { jugadores ->
                 _state.update {
                     it.copy(
                         showPlayerList = true,

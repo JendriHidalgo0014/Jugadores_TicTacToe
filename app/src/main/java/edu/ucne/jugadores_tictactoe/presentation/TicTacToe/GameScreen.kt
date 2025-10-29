@@ -100,7 +100,7 @@ fun TicTacToeScreen(
                             .padding(12.dp),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Text(jugador.nombre, style = MaterialTheme.typography.bodyLarge)
+                        Text(jugador.nombres, style = MaterialTheme.typography.bodyLarge)
                     }
                 }
             }
@@ -135,7 +135,7 @@ private fun TicTacToeBody(
                 Spacer(Modifier.height(24.dp))
 
                 Text(
-                    text = "Jugador X: ${state.jugadorX?.nombre ?: "Sin seleccionar"}",
+                    text = "Jugador X: ${state.jugadorX?.nombres ?: "Sin seleccionar"}",
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Medium
                 )
@@ -146,7 +146,7 @@ private fun TicTacToeBody(
                 Spacer(Modifier.height(12.dp))
 
                 Text(
-                    text = "Jugador O: ${state.jugadorO?.nombre ?: "Sin seleccionar"}",
+                    text = "Jugador O: ${state.jugadorO?.nombres ?: "Sin seleccionar"}",
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Medium
                 )
@@ -188,12 +188,12 @@ fun GameBoard(
     val gameStatus = when {
         uiState.winner != null -> {
             val ganador = if (uiState.winner == Player.X) uiState.jugadorX else uiState.jugadorO
-            "¡El ganador es!: ${ganador?.nombre}!"
+            "¡El ganador es!: ${ganador?.nombres}!"
         }
         uiState.isDraw -> "¡Es un empate!"
         else -> {
             val turno = if (uiState.currentPlayer == Player.X) uiState.jugadorX else uiState.jugadorO
-            "Tu Turno: ${turno?.nombre}"
+            "Tu Turno: ${turno?.nombres}"
         }
     }
 
