@@ -56,6 +56,10 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:2.6.1")
     ksp("androidx.room:room-compiler:2.6.1")
 
+    implementation("androidx.hilt:hilt-work:1.0.0")
+    ksp("androidx.hilt:hilt-compiler:1.0.0")
+
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
 
     implementation("com.google.accompanist:accompanist-permissions:0.30.1")
 
